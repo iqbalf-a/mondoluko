@@ -36,6 +36,13 @@
                         <div class="sb-nav-link-icon"></div>
                         Pembuatan E-KTP
                     </a>
+
+                    <!-- kk -->
+                    <a class="nav-link collapsed" href=" <?= base_url('admin/kk_status') ?> " >
+                        <div class="sb-nav-link-icon"></div>
+                        Pembuatan KK
+                    </a>
+
                 </div>
             </div>
             <div class="sb-sidenav-footer">

@@ -52,8 +52,8 @@
                     </a>
                     <div class="collapse" id="collapseKk" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="#">Pengajuan</a>
-                            <a class="nav-link" href="#">Status</a>
+                            <a class="nav-link" href=" <?= base_url('dashboard/kk_pembuatan') ?> ">Pengajuan</a>
+                            <a class="nav-link" href=" <?= base_url('dashboard/kk_status') ?>">Status</a>
                         </nav>
                     </div>
 

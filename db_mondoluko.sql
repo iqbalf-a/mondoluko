@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 08, 2021 at 11:45 AM
+-- Generation Time: Jul 08, 2021 at 04:07 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.15
 
@@ -53,7 +53,8 @@ INSERT INTO `ektp` (`id`, `user_id`, `nama`, `nik`, `file1`, `file2`, `file3`, `
 (1, 2, 'asda', '12', '7e32c8e7cd0d3e2c2a564efcabfcc51e.pdf', '96f888ba1aa6f86fbe727e60cf8180fe.pdf', NULL, NULL, NULL, NULL, NULL, NULL, 'EKTP6sREY', 1, 1625178026),
 (2, 2, 'qweqweqwe', '12', '05a651981c7407848dd0e6e2b3d5bf0e.pdf', 'defed049b5c67c86368aa9c48ca6dd62.pdf', NULL, NULL, NULL, NULL, NULL, NULL, 'EKTPbWjYT', 2, 1625180089),
 (3, 2, 'contoh 3', '12345', '5a55644320614b98f6e802ad35586fbe.pdf', '386d64cbe085e5886a5652eb5dbcfb56.pdf', 'b4439e18bd8844c905d5dee35545b39b.pdf', NULL, NULL, NULL, NULL, '57cab98e60e04145afd0e62e95a8fc0e.pdf', 'EKTPaCRom', 2, 1625328622),
-(4, 3, 'Asede', '123456789', '977cc0000394f381942b7f5f5d28f6ab.pdf', '228f8663cd032f98c714bb600c0e4083.pdf', NULL, NULL, NULL, NULL, '6c37d048407847e98745064fbf5c5882.pdf', '2155c23f708b6f99d251ec9c2b589c0f.pdf', 'EKTPrEX2b', 1, 1625599093);
+(4, 3, 'Asede', '123456789', '977cc0000394f381942b7f5f5d28f6ab.pdf', '228f8663cd032f98c714bb600c0e4083.pdf', NULL, NULL, NULL, NULL, '6c37d048407847e98745064fbf5c5882.pdf', '2155c23f708b6f99d251ec9c2b589c0f.pdf', 'EKTPrEX2b', 1, 1625599093),
+(5, 3, 'asd', '12', '68ffe6833f7c1439e1557c5a1418b053.pdf', 'acf92cf8f32ad1e2d6406274a8acf480.pdf', NULL, NULL, NULL, NULL, NULL, NULL, 'EKTPFnKwa', 2, 1625776043);
 
 -- --------------------------------------------------------
 
@@ -76,6 +77,61 @@ CREATE TABLE `ektp_catatan` (
 INSERT INTO `ektp_catatan` (`id`, `user_id`, `ektp_id`, `catatan`, `date_created`) VALUES
 (1, 3, 4, 'Tolak', 1625610004),
 (2, 2, 1, 'ini diterima gaess', 1625610121);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `kk`
+--
+
+CREATE TABLE `kk` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `nama` varchar(255) NOT NULL,
+  `nik` int(11) NOT NULL,
+  `file1` varchar(255) NOT NULL,
+  `file2` varchar(255) NOT NULL,
+  `file3` varchar(255) DEFAULT NULL,
+  `file4` varchar(255) DEFAULT NULL,
+  `file5` varchar(255) DEFAULT NULL,
+  `file6` varchar(255) DEFAULT NULL,
+  `file7` varchar(255) DEFAULT NULL,
+  `file8` varchar(255) DEFAULT NULL,
+  `file9` varchar(255) DEFAULT NULL,
+  `file10` varchar(255) DEFAULT NULL,
+  `file11` varchar(255) DEFAULT NULL,
+  `kode` varchar(255) NOT NULL,
+  `status` int(11) NOT NULL,
+  `date_created` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `kk`
+--
+
+INSERT INTO `kk` (`id`, `user_id`, `nama`, `nik`, `file1`, `file2`, `file3`, `file4`, `file5`, `file6`, `file7`, `file8`, `file9`, `file10`, `file11`, `kode`, `status`, `date_created`) VALUES
+(1, 3, 'asd', 12345, '97491fb530075a695449d987b1b6f6c6.pdf', 'f88fbd4dfaa2e1d281cb44b311292c25.png', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'df47cbfc929af3e7c6d68c2eee17d409.png', 'KKDzJut', 0, 1625778328);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `kk_catatan`
+--
+
+CREATE TABLE `kk_catatan` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `kk_id` int(11) NOT NULL,
+  `catatan` varchar(255) NOT NULL,
+  `date_created` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `kk_catatan`
+--
+
+INSERT INTO `kk_catatan` (`id`, `user_id`, `kk_id`, `catatan`, `date_created`) VALUES
+(1, 2, 1, 'Diteirma', 1625778340);
 
 -- --------------------------------------------------------
 
@@ -177,6 +233,18 @@ ALTER TABLE `ektp_catatan`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `kk`
+--
+ALTER TABLE `kk`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `kk_catatan`
+--
+ALTER TABLE `kk_catatan`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -208,13 +276,25 @@ ALTER TABLE `user_role`
 -- AUTO_INCREMENT for table `ektp`
 --
 ALTER TABLE `ektp`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `ektp_catatan`
 --
 ALTER TABLE `ektp_catatan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `kk`
+--
+ALTER TABLE `kk`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `kk_catatan`
+--
+ALTER TABLE `kk_catatan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `user`
