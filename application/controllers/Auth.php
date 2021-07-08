@@ -48,7 +48,9 @@ class Auth extends CI_Controller
 				$this->session->set_userdata($data);
 				//cek role id
 				if ($user['role_id'] == 1) {
-					redirect('dashboard');
+					// ini admin
+
+					redirect('admin');
 				} else {
 					redirect('home');
 				}
@@ -79,9 +81,6 @@ class Auth extends CI_Controller
 
 	public function registration()
 	{
-		if ($this->session->userdata('email')) {
-			redirect('home');
-		}
 
 		$this->form_validation->set_rules('name', 'Name', 'required|trim');
 		$this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[user.email]', [
@@ -105,12 +104,12 @@ class Auth extends CI_Controller
 
 			$this->db->insert('user', $data);
 
-			$this->session->set_flashdata('message', '<div class="alert alert-danger">
+			$this->session->set_flashdata('message', '<div class="alert alert-success">
 			<div class="container">
 			  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
 				<i class="nc-icon nc-simple-remove"></i>
 			  </button>
-			  <span> Email belum terdaftar </span>
+			  <span> Berhasil mendaaftar </span>
 			</div>
 		  </div>');
 			redirect('auth');
